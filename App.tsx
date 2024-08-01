@@ -1,20 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, Text } from "react-native";
+import AppNavigation from "./src/navigation/app-navigation/AppNavigation";
+import { useFonts } from "expo-font";
+import React, { useState, useCallback, useEffect } from "react";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const [fontsLoaded] = useFonts({
+    AtkinsonHyperlegible: require("./assets/fonts/Atkinson-Hyperlegible/AtkinsonHyperlegible-Regular.ttf"),
+  });
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  if (fontsLoaded) {
+    return <AppNavigation />;
+  } else {
+    <View>
+      <Text>...</Text>
+    </View>;
+  }
+}
