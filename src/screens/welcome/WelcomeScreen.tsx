@@ -1,23 +1,18 @@
-import { View, Text } from "react-native";
 import React, { useEffect } from "react";
 import { Image } from "expo-image";
 import images from "../../../assets/img/images";
 import { StatusBar } from "expo-status-bar";
+import BodyText from "../../components/Text/body-text/BodyText";
 
 import Animated, {
-  FadeIn,
-  FadeInDown,
   useAnimatedStyle,
   useSharedValue,
-  withDelay,
   withRepeat,
-  withSpring,
   withTiming,
   Easing,
   FadeOutUp,
 } from "react-native-reanimated";
 import { useNavigation } from "@react-navigation/native";
-import BodyText from "../../components/Text/BodyText";
 
 const AnimatedImage = Animated.createAnimatedComponent(Image);
 
